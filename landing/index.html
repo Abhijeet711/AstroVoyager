@@ -3,23 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/tailwindstyles.css" />
-    <link rel="stylesheet" href="/styles/bootstrapstyles.css" />
+    <!-- TAILWIND -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <!-- BOOTSTRAP -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+      integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- THREE.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.156.1/three.min.js"
+      integrity="sha512-V9mpjsMwBSamMZSFBEbQL+ft1be7xPMU3t27EaGdDE9ctlBSTWJyAW+jKBPUkJYf7YyOWLXpLGwttdoiEv1hrA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
+    <section id="intro">
+      <!-- three.js -->
+    </section>
+    <br />
+    <hr />
+    <br />
     <div class="container">
-      <div class="row-cols-md-6" style="background-color: aqua">
-        BOOTSTRAP TEST
-      </div>
-      <div class="row-cols-md-6" style="background-color: green">
-        BOOTSTRAP TEST
-      </div>
-      <div class="row-cols-md-6" style="background-color: orange">
+      <div class="col-md-4" style="background-color: aqua">BOOTSTRAP TEST</div>
+      <div class="col-md-4" style="background-color: green">BOOTSTRAP TEST</div>
+      <div class="col-md-4" style="background-color: orange">
         BOOTSTRAP TEST
       </div>
     </div>
     <div>
-      <div class="bg-teal-400"><h2>TAILWIND TEST</h2></div>
+      <div><h2 class="bg-purple-500">TAILWIND TEST</h2></div>
     </div>
+    <script src="/assets/js/three-prop.js" type="module"></script>
   </body>
 </html>
