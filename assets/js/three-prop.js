@@ -1,152 +1,136 @@
 var mouseX = 0,
-    mouseY = 0,
-    windowHalfX = window.innerWidth / 2,
-    windowHalfY = window.innerHeight / 2,
-    SEPARATION = 200,
-    AMOUNTX = 10,
-    AMOUNTY = 10,
-    camera,
-    scene,
-    renderer;
+  mouseY = 0,
+  windowHalfX = window.innerWidth / 2,
+  windowHalfY = window.innerHeight / 2,
+  SEPARATION = 200,
+  AMOUNTX = 10,
+  AMOUNTY = 10,
+  camera,
+  scene,
+  renderer;
 
 init();
 animate();
 
 function init() {
-    // Get the #intro section
-    var introSection = document.getElementById('intro');
+  // Get the #intro section
+  var introSection = document.getElementById("intro");
 
-    // Create a div element for the "ICON" text
-    var iconText = document.createElement('div');
-    iconText.id = 'icon-text';
+  var iconText = document.createElement("div");
+  iconText.id = "astro-text";
 
-    //* TEXT badal do
-    iconText.innerText = 'ICON';
+  iconText.innerText = "Astro Voyager";
 
-    // Append the text element to the #intro section
-    introSection.appendChild(iconText);
+  // Append the text element to the #intro section
+  introSection.appendChild(iconText);
 
-    var container,
-        separation = 100,
-        amountX = 50,
-        amountY = 50,
-        particle;
+  var container,
+    separation = 100,
+    amountX = 50,
+    amountY = 50,
+    particle;
 
-    console.log("THREE")
-    container = document.createElement('div');
-    container.id = 'hero-section';
-    document.getElementById('intro').appendChild(container);
+  console.log("THREE");
+  container = document.createElement("div");
+  container.id = "three";
+  document.getElementById("intro").appendChild(container);
 
-    scene = new THREE.Scene();
+  scene = new THREE.Scene();
 
-    renderer = new THREE.CanvasRenderer({ alpha: true }); // gradient; this can be swapped for WebGLRenderer
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    container.appendChild(renderer.domElement);
+  renderer = new THREE.CanvasRenderer({ alpha: true }); // gradient; this can be swapped for WebGLRenderer
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  container.appendChild(renderer.domElement);
 
-    camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        1,
-        10000
-    );
-    camera.position.z = 100;
+  camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    1,
+    10000
+  );
+  camera.position.z = 100;
 
-    // particles
-    var PI2 = Math.PI * 2;
-    var material = new THREE.SpriteCanvasMaterial({
-        color: 0xff0000,
-        program: function (context) {
-            context.beginPath();
-            context.arc(0, 0, 0.5, 0, PI2, true);
-            context.fill();
-        }
-    });
+  // particles
+  var PI2 = Math.PI * 2;
+  var material = new THREE.SpriteCanvasMaterial({
+    color: 0x5c0099,
+    program: function (context) {
+      context.beginPath();
+      context.arc(0, 0, 0.5, 0, PI2, true);
+      context.fill();
+    },
+  });
 
-    var geometry = new THREE.Geometry();
+  var geometry = new THREE.Geometry();
 
-    for (var i = 0; i < 100; i++) {
-        particle = new THREE.Sprite(material);
-        particle.position.x = Math.random() * 2 - 1;
-        particle.position.y = Math.random() * 2 - 1;
-        particle.position.z = Math.random() * 2 - 1;
-        particle.position.normalize();
-        particle.position.multiplyScalar(Math.random() * 10 + 450);
-        particle.scale.x = particle.scale.y = 10;
-        scene.add(particle);
-        geometry.vertices.push(particle.position);
-    }
+  for (var i = 0; i < 100; i++) {
+    particle = new THREE.Sprite(material);
+    particle.position.x = Math.random() * 2 - 1;
+    particle.position.y = Math.random() * 2 - 1;
+    particle.position.z = Math.random() * 2 - 1;
+    particle.position.normalize();
+    particle.position.multiplyScalar(Math.random() * 10 + 450);
+    particle.scale.x = particle.scale.y = 10;
+    scene.add(particle);
+    geometry.vertices.push(particle.position);
+  }
 
-    // lines
-    var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: 0xff0000, opacity: 0.5 }));
-    scene.add(line);
+  // lines
+  var line = new THREE.Line(
+    geometry,
+    new THREE.LineBasicMaterial({ color: 0x5c0099, opacity: 0.5 })
+  );
+  scene.add(line);
 
-    // mousey
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
-    document.addEventListener('touchstart', onDocumentTouchStart, false);
-    document.addEventListener('touchmove', onDocumentTouchMove, false);
+  // mousey
+  document.addEventListener("mousemove", onDocumentMouseMove, false);
+  document.addEventListener("touchstart", onDocumentTouchStart, false);
+  document.addEventListener("touchmove", onDocumentTouchMove, false);
 
-    window.addEventListener('resize', onWindowResize, false);
-
+  window.addEventListener("resize", onWindowResize, false);
 } // end init();
 
 function onWindowResize() {
+  windowHalfX = window.innerWidth / 2;
+  windowHalfY = window.innerHeight / 2;
 
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
 
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
+  renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 function onDocumentMouseMove(event) {
-
-    mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowHalfY;
-
+  mouseX = event.clientX - windowHalfX;
+  mouseY = event.clientY - windowHalfY;
 }
 
 function onDocumentTouchStart(event) {
+  if (event.touches.length > 1) {
+    event.preventDefault();
 
-    if (event.touches.length > 1) {
-
-        event.preventDefault();
-
-        mouseX = event.touches[0].pageX - windowHalfX;
-        mouseY = event.touches[0].pageY - windowHalfY;
-
-    }
+    mouseX = event.touches[0].pageX - windowHalfX;
+    mouseY = event.touches[0].pageY - windowHalfY;
+  }
 }
 
 function onDocumentTouchMove(event) {
+  if (event.touches.length == 1) {
+    event.preventDefault();
 
-    if (event.touches.length == 1) {
-
-        event.preventDefault();
-
-        mouseX = event.touches[0].pageX - windowHalfX;
-        mouseY = event.touches[0].pageY - windowHalfY;
-
-    }
+    mouseX = event.touches[0].pageX - windowHalfX;
+    mouseY = event.touches[0].pageY - windowHalfY;
+  }
 }
 
 function animate() {
-
-    requestAnimationFrame(animate);
-    render();
-
+  requestAnimationFrame(animate);
+  render();
 }
 
 function render() {
+  camera.position.x += (mouseX - camera.position.x) * 0.05;
+  camera.position.y += (-mouseY + 200 - camera.position.y) * 0.05;
+  camera.lookAt(scene.position);
 
-    camera.position.x += (mouseX - camera.position.x) * .05;
-    camera.position.y += (- mouseY + 200 - camera.position.y) * .05;
-    camera.lookAt(scene.position);
-
-    renderer.render(scene, camera);
-
+  renderer.render(scene, camera);
 }
-
-// TEXT
