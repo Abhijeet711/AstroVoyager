@@ -7,13 +7,13 @@
 }
 
 /* 
-COLOR PALETTE for now: 
-3d0066 - purple most
-510087 - purple medium
-5c0099 - purple
-fdc500 - yellow ochre
-ffd500 - yellow
-*/
+  COLOR PALETTE for now: 
+  3d0066 - purple most
+  510087 - purple medium
+  5c0099 - purple
+  fdc500 - yellow ochre
+  ffd500 - yellow
+  */
 
 /* HEADER */
 #header {
@@ -209,6 +209,8 @@ ffd500 - yellow
   color: #fdc500;
   line-height: 26px;
 }
+
+/* FOOTER COPYRIGHT */
 
 #footer .copyright {
   text-align: center;

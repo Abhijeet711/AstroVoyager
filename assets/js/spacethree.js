@@ -37,7 +37,6 @@ function init() {
   );
   camera.position.z = 100;
 
-  var PI2 = Math.PI * 2;
   var materials = [
     new THREE.MeshBasicMaterial({ color: 0xf896d8 }), //  pink
     new THREE.MeshBasicMaterial({ color: 0xca7df9 }), //  purple
