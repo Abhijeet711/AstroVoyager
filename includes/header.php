@@ -173,26 +173,26 @@
 
 <body>
     <header id="header">
-        <div class="container">
-            <div id="logo" class="pull-left">
-                <!-- put link to landing page in <a href> -->
-                <!-- put link to image in img src -->
-                <a href="#" class="scrollto"><img src="#" alt="" title=""></a>
-            </div>
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <!-- link to home landing page -->
-                    <li class="menu-active"><a href="#">Home</a></li>
-                    <!-- link to about us page -->
-                    <li><a href="#">About Us</a></li>
-                    <!-- link to images page -->
-                    <li><a href="#">Images</a></li>
-                    <!-- link to login/registration page -->
-                    <li><a href="#">Login</a></li>
-                    <!-- put link to img in src -->
-                    <li><img id=astroimg src="#" alt="AstroVoyager Logo" title="" style="height:60px;width:90px;margin-top: -10px;
-            margin-left: 20px;"></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <!-- put link to landing page in <a href> -->
+        <!-- put link to image in img src -->
+        <a href="#" class="scrollto"
+          ><img src="assets/background.jpg" alt="" title=""
+        /></a>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <!-- link to home landing page -->
+          <li class="menu-active"><a href="#">Home</a></li>
+          <!-- link to about us page -->
+          <li><a href="#">About Us</a></li>
+          <!-- link to images page -->
+          <li><a href="#">Images</a></li>
+          <!-- link to login/registration page -->
+          <li><a href="#">Login</a></li>
+          <!-- put link to img in src -->
+        </ul>
+      </nav>
+    </div>
+  </header>

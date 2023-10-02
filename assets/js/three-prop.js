@@ -39,12 +39,8 @@ function init() {
 
   var PI2 = Math.PI * 2;
   var materials = [
-    new THREE.MeshBasicMaterial({ color: 0xfdc500 }), //  Gold
-    new THREE.MeshBasicMaterial({ color: 0x5c0099 }), //  Deep Purple
-    new THREE.MeshBasicMaterial({ color: 0xffffff }), //  White
-    new THREE.MeshBasicMaterial({ color: 0xffbe80 }), //  Orange
-    new THREE.MeshBasicMaterial({ color: 0xff6c4b }), //  Red
-    new THREE.MeshBasicMaterial({ color: 0xa45cff }), //  Violet
+    new THREE.MeshBasicMaterial({ color: 0xf896d8 }), //  pink
+    new THREE.MeshBasicMaterial({ color: 0xca7df9 }), //  purple
   ];
 
   var geometry = new THREE.BufferGeometry();
@@ -75,9 +71,6 @@ function init() {
   );
 
   var sphereGeometry = new THREE.SphereGeometry(4, 32, 32);
-
-  //yellow color dots
-  // var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xfdc500 });
 
   //offwhite dots
   var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0x9d9d9d });

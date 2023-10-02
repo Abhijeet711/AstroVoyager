@@ -1,11 +1,13 @@
 <?php
 session_start();
 include 'includes/config.php';
+include 'includes/header.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>test login</title>
+    <link src="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
     <h2>Login</h2>
