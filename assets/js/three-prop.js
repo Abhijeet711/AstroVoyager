@@ -12,32 +12,20 @@ var mouseX = 0,
 init();
 animate();
 
+var introSection = document.getElementById("intro");
+
+// div for astrovoyager text
+var text = document.createElement("div");
+text.id = "astro-text";
+text.innerText = "Astro Voyager";
+
+// Append the text element to the #intro section
+introSection.appendChild(text);
+
 function init() {
-  // Get the #intro section
-  var introSection = document.getElementById("intro");
-
-  var iconText = document.createElement("div");
-  iconText.id = "astro-text";
-
-  iconText.innerText = "Astro Voyager";
-
-  // Append the text element to the #intro section
-  introSection.appendChild(iconText);
-
-  var container,
-    separation = 100,
-    amountX = 50,
-    amountY = 50,
-    particle;
-
-  console.log("THREE");
-  container = document.createElement("div");
-  container.id = "three";
-  document.getElementById("intro").appendChild(container);
-
+  var container = document.getElementById("three");
   scene = new THREE.Scene();
-
-  renderer = new THREE.CanvasRenderer({ alpha: true }); // gradient; this can be swapped for WebGLRenderer
+  renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
 
@@ -49,37 +37,56 @@ function init() {
   );
   camera.position.z = 100;
 
-  // particles
   var PI2 = Math.PI * 2;
-  var material = new THREE.SpriteCanvasMaterial({
-    color: 0x5c0099,
-    program: function (context) {
-      context.beginPath();
-      context.arc(0, 0, 0.5, 0, PI2, true);
-      context.fill();
-    },
-  });
+  var materials = [
+    new THREE.MeshBasicMaterial({ color: 0xfdc500 }), //  Gold
+    new THREE.MeshBasicMaterial({ color: 0x5c0099 }), //  Deep Purple
+    new THREE.MeshBasicMaterial({ color: 0xffffff }), //  White
+    new THREE.MeshBasicMaterial({ color: 0xffbe80 }), //  Orange
+    new THREE.MeshBasicMaterial({ color: 0xff6c4b }), //  Red
+    new THREE.MeshBasicMaterial({ color: 0xa45cff }), //  Violet
+  ];
 
-  var geometry = new THREE.Geometry();
+  var geometry = new THREE.BufferGeometry();
+  var positions = [];
 
-  for (var i = 0; i < 100; i++) {
-    particle = new THREE.Sprite(material);
-    particle.position.x = Math.random() * 2 - 1;
-    particle.position.y = Math.random() * 2 - 1;
-    particle.position.z = Math.random() * 2 - 1;
-    particle.position.normalize();
-    particle.position.multiplyScalar(Math.random() * 10 + 450);
-    particle.scale.x = particle.scale.y = 10;
-    scene.add(particle);
-    geometry.vertices.push(particle.position);
+  for (var i = 0; i < 400; i++) {
+    var x = Math.random() * 2 - 1;
+    var y = Math.random() * 2 - 1;
+    var z = Math.random() * 2 - 1;
+    var length = Math.random() * 10 + 450;
+    var material = materials[Math.floor(Math.random() * materials.length)];
+
+    positions.push(x * length, y * length, z * length);
+
+    var sphereGeometry = new THREE.SphereGeometry(
+      Math.random() * 4 + 2, // Random radius between 2 and 6
+      32,
+      32
+    );
+    var sphere = new THREE.Mesh(sphereGeometry, material);
+    sphere.position.set(x * length, y * length, z * length);
+    scene.add(sphere);
   }
 
-  // lines
-  var line = new THREE.Line(
-    geometry,
-    new THREE.LineBasicMaterial({ color: 0x5c0099, opacity: 0.5 })
+  geometry.setAttribute(
+    "position",
+    new THREE.Float32BufferAttribute(positions, 3)
   );
-  scene.add(line);
+
+  var sphereGeometry = new THREE.SphereGeometry(4, 32, 32);
+
+  //yellow color dots
+  // var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xfdc500 });
+
+  //offwhite dots
+  var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0x9d9d9d });
+
+  for (var i = 0; i < positions.length; i += 3) {
+    var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphere.position.set(positions[i], positions[i + 1], positions[i + 2]);
+    scene.add(sphere);
+  }
 
   // mousey
   document.addEventListener("mousemove", onDocumentMouseMove, false);
@@ -87,7 +94,7 @@ function init() {
   document.addEventListener("touchmove", onDocumentTouchMove, false);
 
   window.addEventListener("resize", onWindowResize, false);
-} // end init();
+}
 
 function onWindowResize() {
   windowHalfX = window.innerWidth / 2;

@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Three.js Particle Animation</title>
+    <title>THREE JS TEST</title>
     <style>
+      @font-face {
+        font-family: "MBFSpace";
+        src: url("assets/fonts/MBFSpace.eot"),
+          url("assets/fonts/MBFSpace.woff2") format("woff2"),
+          url("assets/fonts/MBFSpace.woff") format("woff"),
+          url("assets/fonts/MBFSpace.ttf") format("truetype");
+      }
       body {
         margin: 0;
         overflow: hidden;
+        /* background: #5c0099; */
         background: #fff url(assets/background.jpg) center;
+        /* background: #000; */
       }
       #intro {
+        margin-top: 18%;
         position: absolute;
         top: 20px; /* Adjust the top position as needed */
         left: 50%; /* Center horizontally */
         transform: translateX(-50%); /* Center horizontally */
         text-align: center;
         color: #fdc500; /* Text color */
+        /* color: #8a86ce; */
         font-size: 24px; /* Text font size */
         font-family: Arial, sans-serif; /* Text font family */
         z-index: 1; /* Ensure the text appears above the Three.js canvas */
@@ -26,13 +37,50 @@
         top: 0;
         left: 0;
       }
+      #astro-text {
+        font-family: "MBFSpace", sans-serif;
+        padding: 25px;
+        font-size: 100px;
+        background: rgba(129, 62, 176, 0.25);
+        box-shadow: 0 2px 10px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(2px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      /* Center the text vertically on smaller screens */
+      @media screen and (max-width: 768px) {
+        #intro {
+          margin-top: 50vh;
+          transform: translate(-50%, -50%);
+        }
+        #astro-text {
+          font-size: 20vw; /* Adjust font size for smaller screens */
+          padding: 5% 10%; /* Adjust padding for smaller screens */
+        }
+      }
     </style>
+    <!-- TAILWIND -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <!-- BOOTSTRAP -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+      integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
-    <div id="intro">
-      <h1>Astro Voyager</h1>
-    </div>
-
+    <!-- div below is for the text above the threejs -->
+    <div id="intro"></div>
+    <!-- div below is for threejs -->
     <div id="three"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -52,6 +100,16 @@
       init();
       animate();
 
+      var introSection = document.getElementById("intro");
+
+      // div for astrovoyager text
+      var text = document.createElement("div");
+      text.id = "astro-text";
+      text.innerText = "Astro Voyager";
+
+      // Append the text element to the #intro section
+      introSection.appendChild(text);
+
       function init() {
         var container = document.getElementById("three");
         scene = new THREE.Scene();
@@ -68,37 +126,50 @@
         camera.position.z = 100;
 
         var PI2 = Math.PI * 2;
-        var material = new THREE.SpriteMaterial({
-          color: 0x5c0099,
-        });
+        var materials = [
+          // new THREE.MeshBasicMaterial({ color: 0xfdc500 }), //  Gold
+          // new THREE.MeshBasicMaterial({ color: 0x5c0099 }), //  Deep Purple
+          // new THREE.MeshBasicMaterial({ color: 0xffffff }), //  White
+          // new THREE.MeshBasicMaterial({ color: 0xffbe80 }), //  Orange
+          // new THREE.MeshBasicMaterial({ color: 0xff6c4b }), //  Red
+          // new THREE.MeshBasicMaterial({ color: 0xa45cff }), //  Violet
+        ];
 
         var geometry = new THREE.BufferGeometry();
         var positions = [];
 
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 400; i++) {
           var x = Math.random() * 2 - 1;
           var y = Math.random() * 2 - 1;
           var z = Math.random() * 2 - 1;
           var length = Math.random() * 10 + 450;
+          var material =
+            materials[Math.floor(Math.random() * materials.length)];
 
           positions.push(x * length, y * length, z * length);
+
+          var sphereGeometry = new THREE.SphereGeometry(
+            Math.random() * 4 + 2, // Random radius between 2 and 6
+            32,
+            32
+          );
+          var sphere = new THREE.Mesh(sphereGeometry, material);
+          sphere.position.set(x * length, y * length, z * length);
+          scene.add(sphere);
         }
 
         geometry.setAttribute(
           "position",
           new THREE.Float32BufferAttribute(positions, 3)
         );
-        // hii this is a text.
-        var lineMaterial = new THREE.LineBasicMaterial({
-          color: 0x5c0099,
-          opacity: 0.5,
-        });
-        var line = new THREE.Line(geometry, lineMaterial);
-        scene.add(line);
 
-        // Create slightly larger spheres at the endpoints of each line
-        var sphereGeometry = new THREE.SphereGeometry(4, 32, 32); // Increase the radius to make spheres bigger
-        var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0x3d0066 });
+        var sphereGeometry = new THREE.SphereGeometry(4, 32, 32);
+
+        //yellow color dots
+        // var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xfdc500 });
+
+        //offwhite dots
+        var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xca7df9 });
 
         for (var i = 0; i < positions.length; i += 3) {
           var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);

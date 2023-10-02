@@ -5,7 +5,19 @@
     <meta charset="utf-8">
     <title>AstroVoyager</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+    <!-- TAILWIND -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <!-- BOOTSTRAP -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+      integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- Favicons -->
     <!-- put logo link in href -->
     <link href="assets/img/#" rel="icon">
@@ -172,7 +184,7 @@
                     <!-- link to home landing page -->
                     <li class="menu-active"><a href="#">Home</a></li>
                     <!-- link to about us page -->
-                    <li><a href="">About Us</a></li>
+                    <li><a href="#">About Us</a></li>
                     <!-- link to images page -->
                     <li><a href="#">Images</a></li>
                     <!-- link to login/registration page -->
