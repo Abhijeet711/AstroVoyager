@@ -108,12 +108,11 @@
 
 /* FOOTER */
 #footer {
-  position: fixed;
+  /* wherever you need a fixed footer, just do inline styling, commented the below so that footer can be dynamic */
+  /* position: fixed; */
   left: 0;
-  top: 67.5%;
   width: 100%;
   right: 0;
-  z-index: 3;
   font-size: 14px;
   color: #fdc500;
   background: #3d0066;

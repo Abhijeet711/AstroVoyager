@@ -37,7 +37,7 @@
             <!-- put link to landing page in <a href> -->
             <!-- put link to image in img src -->
             <a href="#" class="scrollto"
-            ><img src="../assets/img/astro logo.png" alt="" title=""
+            ><img src="assets/img/astro logo.png" alt="" title=""
             /></a>
         </div>
         <nav id="nav-menu-container">
