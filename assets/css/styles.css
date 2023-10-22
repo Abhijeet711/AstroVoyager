@@ -6,6 +6,11 @@
     url("assets/fonts/MBFSpace.ttf") format("truetype");
 }
 
+/* body {
+  margin: 0;
+  overflow: hidden;
+  background: url(../img/space.jpg) center;
+} */
 /* 
   COLOR PALETTE for now: 
   3d0066 - purple most
@@ -61,6 +66,7 @@
 
 .nav-menu > li {
   float: left;
+  padding-right: 20px;
 }
 
 #nav-menu-container {
@@ -78,16 +84,18 @@
   outline: none;
 }
 
-.nav-menu .menu-active a,
+/* ACTIVE MENU ON NAVBAR */
+/* .nav-menu .menu-active a,
 .nav-menu a:hover {
   color: #fdc500;
-}
+} */
 
 .nav-menu > li {
   margin-left: 8px;
 }
 
-.nav-menu > li > a:before {
+/* UNDERLINE MENU ON LI */
+/* .nav-menu > li > a:before {
   content: "";
   position: absolute;
   width: 0;
@@ -96,15 +104,16 @@
   left: 0;
   background-color: #fdc500;
   visibility: hidden;
-  transition: all 0.3s ease-in-out 0s;
-}
+  transition: all 0.3s ease-in-out 0s; 
+} */
 
-.nav-menu a:hover:before,
+/* UNDERLINE MENU ON NAVBAR */
+/* .nav-menu a:hover:before,
 .nav-menu li:hover > a:before,
 .nav-menu .menu-active > a:before {
   visibility: visible;
   width: 100%;
-}
+} */
 
 /* FOOTER */
 #footer {

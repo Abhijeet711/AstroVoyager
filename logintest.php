@@ -10,7 +10,7 @@ include 'includes/header.php';
     <link src="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <h2>Login</h2>
+    <h2>Login</h2><br><br><br><br><br>
     <form method="POST" action="logintest.php">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>

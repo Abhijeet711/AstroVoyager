@@ -1,12 +1,12 @@
 <!-- Bootstrap CSS File -->
-    <link href="../assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- link below is for triangles in footer -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
     <!-- Main Stylesheet File -->
-    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
     <!-- link below is for icons of instagram and facebook in footer  -->
     <link
       rel="stylesheet"

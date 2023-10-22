@@ -1,14 +1,14 @@
 <html>
     <head>
     <!-- Bootstrap CSS File -->
-    <link href="../assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- link below is for triangles in footer -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
     <!-- Main Stylesheet File -->
-    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
     <!-- link below is for icons of instagram and facebook in footer  -->
     <link
       rel="stylesheet"
@@ -43,11 +43,13 @@
         <nav id="nav-menu-container">
             <ul class="nav-menu">
             <!-- link to home landing page -->
-            <li class="menu-active"><a href="#">Home</a></li>
+            <li class="menu-active"><a href="test.html">Home</a></li>
             <!-- link to about us page -->
             <li><a href="#">About Us</a></li>
             <!-- link to images page -->
             <li><a href="#">Images</a></li>
+            <!-- link to Environment page -->
+            <li><a href="environment.php">Environment</a></li>
             <!-- link to login/registration page -->
             <li><a href="#">Login</a></li>
             <!-- put link to img in src -->
