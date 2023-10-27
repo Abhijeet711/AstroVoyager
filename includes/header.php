@@ -45,9 +45,9 @@
             <!-- link to home landing page -->
             <li class="menu-active"><a href="test.html">Home</a></li>
             <!-- link to about us page -->
-            <li><a href="#">About Us</a></li>
+            <li><a href="aboutus.php">About Us</a></li>
             <!-- link to images page -->
-            <li><a href="#">Images</a></li>
+            <li><a href="location.php">Location</a></li>
             <!-- link to Environment page -->
             <li><a href="environment.php">Environment</a></li>
             <!-- link to login/registration page -->

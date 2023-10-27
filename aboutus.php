@@ -1,42 +1,4 @@
-<!-- Bootstrap CSS File -->
-<link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-<!-- link below is for triangles in footer -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-/>
-
-<!-- Main Stylesheet File -->
-<link href="assets/css/styles.css" rel="stylesheet" />
-
-<!-- link below is for icons of instagram and facebook in footer  -->
-<link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
-
-<!-- TAILWIND -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-  referrerpolicy="no-referrer"
-/>
-<!-- BOOTSTRAP -->
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
-  integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Astro Voyager</title>
-
-<?php 
-    include 'includes/config.php';
+<?php
     include 'includes/header.php';
 ?>
 <link
@@ -103,39 +65,50 @@
 <div class="container mt-5 mb-3">
   <div class="row">
     <div class="col-md-6 mt-5 colimgs">
-      <img src="assets\img\eimg1.webp" alt="aircraft launch" class="abtimg"/>
+      <img src="assets\img\img1.jpg" alt="aircraft launch" class="abtimg"/>
     </div>
     <div class="col-md-6 mt-3 colimgs">
       <p>
-      Space Debris.<br>
-      Implement strict regulations and best practices for responsible space operations, including the removal of defunct satellites and debris. Encourage the development of cleaner, reusable rocket technologies that reduce the number of launches.
+      Explore the Universe with AstroVoyager.<br>
+      Your gateway to orbital space adventures.
       </p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6 mt-3 colimgs">
       <p>
-      Environmental Impact.<br>
-      Promote the development of greener propulsion technologies and enforce stringent environmental impact assessments for launch sites, requiring noise reduction and pollution control measures.
+      Incredible Space Journeys. <br>
+      Embark on unforgettable space voyages with our state-of-the-art spacecraft.
       </p>
     </div>
     <div class="col-md-6 mt-3 colimgs">
-      <img src="assets\img\eimg3.jpeg" alt="aircraft in space" class="abtimg"/>
+      <img src="assets\img\img2.webp" alt="aircraft in space" class="abtimg"/>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6 mt-3 colimgs">
       <img
-        src="assets\img\eimg2.jpg"
+        src="assets\img\img3.webp"
         alt="girl in aircraft looking outside window"
         class="abtimg"
       />
     </div>
     <div class="col-md-6 mt-3 colimgs">
       <p>
-      Space Traffic Management.<br>
-      Enhance international cooperation and establish a global space traffic control center to coordinate spacecraft and debris movements, enforcing standardized procedures and protocols while encouraging data sharing among space actors.
+      Experienced Astronauts. <br>
+      Travel with experienced astronauts who ensure your safety and enjoyment throughout the journey.
       </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mt-3 colimgs">
+      <p>
+      Global Space Destinations. <br>
+      Discover a variety of destinations in space, from lunar expeditions to orbital adventures.
+      </p>
+    </div>
+    <div class="col-md-6 mt-3 colimgs">
+      <img src="assets\img\img4.jpg" alt="view outside from aircraft" class="abtimg"/>
     </div>
   </div>
   <div class="row mt-4">

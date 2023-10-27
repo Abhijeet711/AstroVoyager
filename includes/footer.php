@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 footer-info">
             <!-- put logo in src -->
-            <img src="../assets/img/astro logo.png"" alt="AstroVoyager Logo"
+            <img src="assets/img/astro logo.png"" alt="AstroVoyager Logo"
             style=" height: 100px; width: 100px; margin-left: 30%; margin-right:
             20%; margin-top: -10px; " />
             <p
@@ -82,15 +82,15 @@
       </div>
     </div>
     <div class="container">
-      <div class="copyright" style="margin-top: -3%">
+      <div class="copyright" style="margin-top: -2.5%">
         &copy; Copyright <strong>AstroVoyager</strong>. All Rights Reserved.
       </div>
     </div>
 </footer>
-<script src="../assets/lib/jquery/jquery.min.js "></script>
-<script src="../assets/lib/jquery/jquery-migrate.min.js "></script>
-<script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js "></script>
-<script src="../assets/lib/easing/easing.min.js "></script>
-<script src="../assets/lib/superfish/hoverIntent.js "></script>
-<script src="../assets/lib/superfish/superfish.min.js "></script>
+<script src="assets/lib/jquery/jquery.min.js "></script>
+<script src="assets/lib/jquery/jquery-migrate.min.js "></script>
+<script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js "></script>
+<script src="assets/lib/easing/easing.min.js "></script>
+<script src="assets/lib/superfish/hoverIntent.js "></script>
+<script src="assets/lib/superfish/superfish.min.js "></script>
 </html>
