@@ -42,15 +42,15 @@
               <p>
                 <li>
                   <i class="bi bi-caret-right"></i>
-                  <a href="#" style="color: #fdc500">Home</a>
+                  <a href="test.html" style="color: #fdc500">Home</a>
                 </li>
                 <li>
                   <i class="bi bi-caret-right"></i>
-                  <a href="#" style="color: #fdc500">About us</a>
+                  <a href="aboutus.php" style="color: #fdc500">About us</a>
                 </li>
                 <li>
                   <i class="bi bi-caret-right"></i>
-                  <a href="#" style="font-size: 17px; color: #fdc500">Images</a>
+                  <a href="location.php" style="font-size: 17px; color: #fdc500">Location</a>
                 </li>
               </p>
             </ul>

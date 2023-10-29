@@ -1,9 +1,8 @@
 <head>
     <meta charset="utf-8">
-    <title !important>Login Page</title>
+    <title !important>Registration Page</title>
 </head>
 <?php
-session_start();
 include 'includes/config.php';
 include 'includes/header.php';
 ?>
@@ -21,12 +20,12 @@ include 'includes/header.php';
             color: #ffd500 !important;
         }
         .formdown{
-            margin-top:9%;
-            margin-bottom:6%;
+            margin-top:5.5%;
+            margin-bottom:1%;
             width: 700px;
             text-align: left;
             padding: 20px;
-            font-size: x-large;
+            font-size: larger;
         }
         .btn{
             color: #ffd500 !important;
@@ -51,42 +50,26 @@ include 'includes/header.php';
         }
     </style>
     <center>
-        <form class="formdown" action="login.php" method="POST">
-            <label class="form-label">Email address:</label>
+        <form class="formdown" action="registrationwork.php" method="POST">
+            <label class="form-label">Name:</label>
+            <input type="name" class="form-control inpt" id="name" name="name" autocomplete="off" required>
+            <label class="form-label mt-3">Email address:</label>
             <input type="email" class="form-control inpt" id="email" name="email" autocomplete="off" required>
             <div id="emailHelp" class="form-text mb-3">We'll never share your email with anyone else.</div>
             <label class="form-label">Password:</label>
             <input type="password" class="form-control inpt" id="password" name="password" autocomplete="off" required>
-            <button type="submit" class="btn mt-3">Login</button>
-            <div id="emailHelp" class="form-text mt-2 mb-3">Don't have an account? Sign up <a style="color: #ffd500 !important; text-decoration: underline;" href="registration.php">here</a>!</div>
+            <label class="form-label mt-3">Phone Number:</label>
+            <input type="number" class="form-control inpt" id="phone" name="phone" autocomplete="off" maxlength="10" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <label class="form-label mt-3">Date of Birth:</label><br>
+            <input type="date" class="form-control inpt" id="dob" name="dob"><br>
+            <label class="form-label">Country:</label>
+            <input type="country" class="form-control inpt" id="country" name="country" autocomplete="off" required>
+            <button type="submit" class="btn mt-3">Register</button>
+            <div id="emailHelp" class="form-text mt-2 mb-2">Already have an account? Sign in <a style="color: #ffd500 !important; text-decoration: underline;" href="login.php">here</a>!</div>
         </form>
     </center>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/country.js"></script>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // SQL query to fetch email and password based on the provided email
-    $sql = "SELECT email, password, name FROM users WHERE email = '$email' AND password = '$password'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows == 1) {
-        // Fetch user data
-        $row = $result->fetch_assoc();
-        
-        // Store user data in session variables
-        $_SESSION['email'] = $row['email'];
-        $_SESSION['name'] = $row['name'];
-
-        // Redirect to the home page
-        echo "<script>window.location.href = 'hometest.php';</script>";
-        exit();
-    } else {
-        echo "<script>alert('Incorrect password. Please try again.');</script>";
-    }
-} else {
-    echo "<script>alert('User not found. Please check your email.');</script>";
-}
-include 'includes/footer.php';
+    include 'includes/footer.php';
 ?>

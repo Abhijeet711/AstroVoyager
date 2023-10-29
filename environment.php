@@ -30,11 +30,10 @@
   referrerpolicy="no-referrer"
 ></script>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Astro Voyager</title>
-
+<head>
+    <meta charset="utf-8">
+    <title !important>Environmental Details</title>
+</head>
 <?php 
     include 'includes/config.php';
     include 'includes/header.php';

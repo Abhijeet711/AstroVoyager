@@ -1,3 +1,7 @@
+<head>
+    <meta charset="utf-8">
+    <title !important>About Us</title>
+</head>
 <?php
     include 'includes/header.php';
 ?>

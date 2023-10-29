@@ -1,3 +1,7 @@
+<head>
+    <meta charset="utf-8">
+    <title !important>Location and Weather</title>
+</head>
 <?php
 include 'includes/config.php';
 include 'includes/header.php';

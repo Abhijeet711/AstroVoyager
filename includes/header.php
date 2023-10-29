@@ -36,8 +36,8 @@
         <div id="logo" class="pull-left">
             <!-- put link to landing page in <a href> -->
             <!-- put link to image in img src -->
-            <a href="#" class="scrollto"
-            ><img src="assets/img/astro logo.png" alt="" title=""
+            <a href="test.html" class="scrollto"
+            ><img src="assets/img/astro logo.png" alt="astro logo" title=""
             /></a>
         </div>
         <nav id="nav-menu-container">
@@ -51,7 +51,7 @@
             <!-- link to Environment page -->
             <li><a href="environment.php">Environment</a></li>
             <!-- link to login/registration page -->
-            <li><a href="#">Login</a></li>
+            <li><a href="login.php">Login</a></li>
             <!-- put link to img in src -->
             </ul>
         </nav>
