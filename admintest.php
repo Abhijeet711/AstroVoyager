@@ -14,7 +14,7 @@
         $_SESSION['id'] = $row['id'];
 
         // Redirect to the home page
-        header("Location: adminpanel.php");
+        header("Location: adminuserCRUD.php");
         exit();
     } else {
         echo "<script>alert('Incorrect password. Please try again.');</script>";

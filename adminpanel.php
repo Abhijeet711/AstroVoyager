@@ -6,13 +6,25 @@
     legend{
         margin-top: 6%;
     }
+    .container{
+        margin: auto;
+    }
+    h1{
+        background-color: #3d0066;
+        color: #ffd500 !important;
+        font-size: xx-large !important;
+        border: 0px !important;
+        padding:15px;
+        border-radius: 25px;
+        width: 300px;
+    }
     .legenda{
         background-color: #3d0066;
         color: #ffd500;
         border: 1px solid #fdc500;
-        font-size: 2vh;
+        font-size: large;
         padding:15px;
-        border-radius: 8px;
+        border-radius: 25px;
         text-align: center;
     }
     table {
@@ -22,8 +34,9 @@
         background-color: #3d0066;
         color: #ffd500;
         border: 1px solid #fdc500;
-        padding:20px;
+        padding:25px;
         text-align: center;
+        font-size: large;
     }
     input{
         border: 0px transparent;
@@ -54,7 +67,8 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-    echo "<center><legend><a class='legenda' href='includes/logout.php'>LOGOUT</a></legend><table border='1'>
+    echo "<center><legend><h1>User Details</h1></legend>
+    <table border='1'>
     <tr>
     <th>Email ID</th>
     <th>Name</th>
@@ -72,32 +86,19 @@
         echo "<td>" . $row['country'] . "</td>";
         echo "</tr>";
     }
-    echo "</table>
-    <div class='container'>
-        <div class='row'>
-            <div class='col-md-4 mt-4'>
-                <form action='' style='margin-right:-170%'>
-                    <button type='submit' class='idb'>Insert</button>
-                </form>
-            </div>
-            <div class='col-md-4 mt-4'>
-                <form action=''>
-                    <button type='submit' class='idb'>Update</button>
-                </form>
-            </div>
-            <div class='col-md-4 mt-4'>
-                <form action='' style='margin-left:-170%'>
-                    <button type='submit' class='idb'>Delete</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    </center>";
+    echo "</table>";
     } else {
     echo "No records found.";
     }
 ?>
-<!-- </div>
-        <div class='col-md-6'></div>
-    </div>
-</div> -->
+        <div class="mt-4" style="width:250px;">
+            <form name="form1" method="GET" action="adminuserCRUD.php" class="legenda">
+                <input type="submit" value="Edit User Details">
+            </form>
+        </div>
+        <div class="mt-4" style="width:250px;">
+            <form name="form1" method="GET" action="includes/logout.php" class="legenda">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

@@ -4,21 +4,61 @@
     <title>admin test login</title>
     <link src="../assets/css/style.css" rel="stylesheet" />
   </head>
+  <style>
+    body {
+      background-color: #510087 !important;
+      color: #ffd500 !important;
+      font-size: x-large;
+    }
+    .formdown {
+      margin-top: 9%;
+      margin-bottom: 6%;
+      width: 700px;
+      text-align: left;
+      padding: 20px;
+      font-size: x-large;
+    }
+    .btn {
+      color: #ffd500 !important;
+      font-size: large !important;
+      background-color: #510087 !important;
+      border: 1px solid #ffd500 !important;
+      border-radius: 25px !important;
+      padding: 10px 20px !important;
+      cursor: pointer !important;
+    }
+    .form-text {
+      font-size: medium !important;
+    }
+    .inpt {
+      width: 100% !important;
+      border: 1px solid #ffd500 !important;
+      border-radius: 25px !important;
+      padding: 5px !important;
+      background-color: #3d0066 !important;
+      color: #fdc500 !important;
+      font-size: large !important;
+    }
+  </style>
   <body>
-    <h2>Login</h2>
-    <form method="POST" action="admintest.php">
-      <label for="id">Admin ID:</label>
-      <input id="id" name="id" required /><br /><br />
+    <center>
+      <form method="POST" action="admintest.php" class="formdown">
+        <h2 style="text-align: center !important">Admin Login</h2>
+        <label for="id">Admin ID:</label>
+        <input id="id" name="id" class="inpt" required /><br /><br />
 
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-      /><br /><br />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="inpt"
+          required
+        /><br /><br />
 
-      <input type="submit" value="Login" />
-    </form>
+        <input type="submit" value="Admin Login" class="btn" />
+      </form>
+    </center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
