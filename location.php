@@ -5,7 +5,7 @@
 <?php
 include 'includes/config.php';
 include 'includes/header.php';
-$apiKey = "eb9ca416b1b27411a55f72a027e8ef5c";
+$apiKey = "xxxace";
 $cityId = "1254163";
 // $lat = "8.524139";
 // $lot = "76.936638";

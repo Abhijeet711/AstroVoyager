@@ -15,7 +15,7 @@ function mailsent(){
         $mail->SMTPAuth = true;
         $mail->SMTPDebug = 1;
         $mail->Username = "abhijeet.b@somaiya.edu";
-        $mail->Password = "ngdqmjlrvkokkihe";
+        $mail->Password = "xxxace";
 
         $mail->SMTPSecure="ssl";
         $mail->Port=465;
