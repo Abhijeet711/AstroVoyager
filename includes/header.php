@@ -43,7 +43,7 @@
         <nav id="nav-menu-container">
             <ul class="nav-menu">
             <!-- link to home landing page -->
-            <li class="menu-active"><a href="test.html">Home</a></li>
+            <li class="menu-active" id="removeli"><a href="test.html">Home</a></li>
             <!-- link to about us page -->
             <li><a href="aboutus.php">About Us</a></li>
             <!-- link to images page -->

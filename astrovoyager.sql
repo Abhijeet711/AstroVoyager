@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2023 at 08:52 AM
+-- Generation Time: Nov 03, 2023 at 07:43 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,7 +37,21 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `password`) VALUES
-('admin', 'admin123');
+('admin', 'admin123'),
+('test', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `name` varchar(25) NOT NULL,
+  `contact` varchar(10) NOT NULL,
+  `passportno` varchar(8) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -59,11 +73,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`name`, `email`, `password`, `phone`, `dob`, `country`) VALUES
-('Abhijeet Mangesh Bagwe', 'abhijeet.b@somaiya.edu', 'abhi', '8879054947', '2001-11-07', 'India');
+('Abhijeet Mangesh Bagwe', 'abhijeet.b@somaiya.edu', 'abhi', '8879054947', '2001-11-07', 'India'),
+('wasdtest2', 'test@mail.com', 'updated', '5558884442', '2023-07-12', 'testupdate');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`passportno`);
 
 --
 -- Indexes for table `users`
@@ -76,3 +103,26 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+-- Table "admin" {
+--   "id" varchar(10) [not null]
+--   "password" varchar(10) [not null]
+-- }
+
+-- Table "booking" {
+--   "name" varchar(25) [not null]
+--   "contact" varchar(10) [not null]
+--   "passportno" varchar(8) [not null]
+--   "email" varchar(50) [not null]
+-- }
+
+-- Table "users" {
+--   "name" varchar(50) [not null]
+--   "email" varchar(50) [not null]
+--   "password" varchar(25) [not null]
+--   "phone" varchar(10) [not null]
+--   "dob" date [not null]
+--   "country" varchar(25) [not null]
+-- }

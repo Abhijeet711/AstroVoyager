@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['name'] = $row['name'];
 
         // Redirect to the home page
-        echo "<script>window.location.href = 'hometest.php';</script>";
+        echo "<script>window.location.href = 'booking.php';</script>";
         exit();
     } else {
         echo "<script>alert('Incorrect password. Please try again.');</script>";
