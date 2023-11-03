@@ -1,1 +1,3 @@
 # AstroVoyager
+AstroVoyager aims to revolutionize commercial space travel by providing suborbital space flights to the public. The website will be a platform to showcase the achievements and advancements in space technology, making space travel accessible to civilians and researchers alike. Inspired by the vision of making space travel a reality for civilians, this website aims to showcase the advancements in space technology and offer suborbital space flights to adventurous individuals and researchers alike.<br>
+Note that all the images used for the website are taken from various sources on the web and are only used as placeholders. We do not own any of them.
